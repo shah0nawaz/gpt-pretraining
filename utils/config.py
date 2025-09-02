@@ -4,7 +4,7 @@ def get_config():
     return {
     "vocab_size": 50257,
     "context_length": 2,
-    "emb_dim": 144,
+    "emb_dim": 1024,
     "n_heads": 12,
     "n_layers": 12,
     "drop_rate_attn": 0.1,

@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from model.layers import LayerNorm, MultiHeadAttention, FFNN
+from .layers import LayerNorm, MultiHeadAttention, FFNN
 
 class TransformerBlock(nn.Module):
     def __init__(self, cfg):
