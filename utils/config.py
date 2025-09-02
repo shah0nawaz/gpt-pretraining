@@ -1,9 +1,10 @@
 import torch
 
-GPT_CONFIG_124M = {
+def get_config():
+    return {
     "vocab_size": 50257,
-    "context_length": 256,
-    "emb_dim": 768,
+    "context_length": 2,
+    "emb_dim": 144,
     "n_heads": 12,
     "n_layers": 12,
     "drop_rate_attn": 0.1,

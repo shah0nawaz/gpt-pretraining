@@ -2,8 +2,8 @@ import torch
 import tiktoken
 
 from model.model import GPT
-from utils.config import GPT_CONFIG_124M
-from data.dataset import create_dataloader
+from utils.utils import get_config
+# from dataset import create_dataloader
 from inference import generate_and_print_sample
 
 
@@ -117,11 +117,11 @@ tokenizer = tiktoken.get_encoding("gpt2")
 device = GPT_CONFIG_124M['device']
 torch.manual_seed(123)
 model = GPT(GPT_CONFIG_124M)
-model.to(device)
-optimizer = torch.optim.AdamW(model.parameters(),lr=0.001, weight_decay=0.1)
-num_epochs = 100
-train_losses, val_losses, track_tokens_seen = train_model_simple(
-    model, train_loader, val_loader, optimizer, device,
-    num_epochs=num_epochs, eval_freq=5, eval_iter=5,
-    start_context="Every effort moves you", tokenizer=tokenizer
-    )
+# model.to(device)
+# optimizer = torch.optim.AdamW(model.parameters(),lr=0.001, weight_decay=0.1)
+# num_epochs = 100
+# train_losses, val_losses, track_tokens_seen = train_model_simple(
+#     model, train_loader, val_loader, optimizer, device,
+#     num_epochs=num_epochs, eval_freq=5, eval_iter=5,
+#     start_context="Every effort moves you", tokenizer=tokenizer
+#     )
