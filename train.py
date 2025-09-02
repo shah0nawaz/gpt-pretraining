@@ -3,7 +3,7 @@ import tiktoken
 
 from model.model import GPT
 from utils.utils import get_config
-# from dataset import create_dataloader
+from data.dataset import create_dataloader
 from inference import generate_and_print_sample
 
 
@@ -97,6 +97,7 @@ with open("the-verdict.txt", "r") as f:
 
 train_ratio = 0.90
 split_idx = int(train_ratio * len(raw_text))
+GPT_CONFIG_124M = get_config()
 settings = GPT_CONFIG_124M
 train_loader = create_dataloader(
         raw_text[:split_idx],

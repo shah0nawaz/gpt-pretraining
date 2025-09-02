@@ -1,7 +1,7 @@
 import torch
 import tiktoken
 from model.model import GPT
-from utils.config import GPT_CONFIG_124M
+from utils.config import get_config
 from utils.utils import text_to_ids, ids_to_text, generate
 
 def generate_and_print_sample(model, tokenizer, device, start_context):
@@ -19,6 +19,7 @@ def generate_and_print_sample(model, tokenizer, device, start_context):
 
 if __name__=="__main__":
     start_context = "you should aim for you goal"
+    GPT_CONFIG_124M  = get_config()
     device = GPT_CONFIG_124M['device']
     model = GPT(GPT_CONFIG_124M)
     tokenizer = tiktoken.get_encoding('gpt2')
